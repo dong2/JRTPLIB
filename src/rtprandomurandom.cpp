@@ -68,7 +68,10 @@ uint8_t RTPRandomURandom::GetRandom8()
 
 	uint8_t value;
 
-	fread(&value, sizeof(uint8_t), 1, device);
+	size_t result = fread(&value, sizeof(uint8_t), 1, device);
+	if (result > 0) {
+      // do smthng
+  }
 
 	return value;
 }
@@ -80,8 +83,10 @@ uint16_t RTPRandomURandom::GetRandom16()
 
 	uint16_t value;
 
-	fread(&value, sizeof(uint16_t), 1, device);
-
+	size_t result = fread(&value, sizeof(uint16_t), 1, device);
+	if (result > 0) {
+      // do smthng
+  }
 	return value;
 }
 
@@ -92,8 +97,10 @@ uint32_t RTPRandomURandom::GetRandom32()
 
 	uint32_t value;
 
-	fread(&value, sizeof(uint32_t), 1, device);
-
+	size_t result = fread(&value, sizeof(uint32_t), 1, device);
+	if (result > 0) {
+      // do smthng
+  }
 	return value;
 }
 
@@ -104,7 +111,10 @@ double RTPRandomURandom::GetRandomDouble()
 
 	uint64_t value;
 
-	fread(&value, sizeof(uint64_t), 1, device);
+	size_t result = fread(&value, sizeof(uint64_t), 1, device);
+	if (result > 0) {
+      // do smthng
+  }	
 
 #ifdef RTP_HAVE_VSUINT64SUFFIX
 	value &= 0x7fffffffffffffffui64;
